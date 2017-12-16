@@ -1,0 +1,39 @@
+<div class="top_padding_50">
+  <div class="well well-sm">
+    <span class="lead">
+      <%= (go_action=="Edit") ? "Editing the User Details" : "Create the new User" %>
+    </span>
+    <span class="pull-right label">
+  		<%= link_to "Back", :action => "index" %>
+    </span>
+  </div>
+  
+  <div class="well">
+    <% action=  (go_action == "Edit") ? "update" : "create" %>
+    <%= form_for @user, url: {action: action } do |f| %>
+      <div class="form-group">
+        <div class="row">
+          <div class="lead col-sm-4"> First name </div>
+          <div class="col-sm-4"><%= f.text_field :first_name, :class => "form-control" %></div>
+        </div>
+        <div class="row">
+          <div class="lead col-sm-4"> Last name </div>
+          <div class="col-sm-4"><%= f.text_field :Last_name, :class => "form-control" %></div>
+        </div>
+        <div class="row">
+          <div class="lead col-sm-4"> Login Id </div>
+          <div class="col-sm-4"><%= f.text_field :user_id, :class => "form-control" %></div>
+        </div>
+        <div class="row">
+          <div class="lead col-sm-4"> Email </div>
+          <div class="col-sm-4"><%= f.text_field :email, :class => "form-control" %></div>
+        </div>
+        <div class="row">
+          <div class="lead col-sm-4"> Phone </div>
+          <div class="col-sm-4"><%= f.text_field :phone, :class => "form-control" %></div>
+        </div>
+        <%= f.submit ((go_action=="Edit") ? "Update" : "Save"), :class=> 'btn btn-primary' %> </div>
+      </div>  
+    <% end %>
+  </div>
+</div>

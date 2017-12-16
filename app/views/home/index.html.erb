@@ -1,0 +1,13 @@
+<div class="top_padding_50"></div>
+  <div class="well well-sm font_color_blue"><center>Welcome</center></div>
+    <div class="well center_all">
+      <%= form_tag :action => "user_validation" do %>  
+        <span class="lead">User Id</span>
+        <%= text_field_tag :user_id, params[:user_id], :placeholder => "Enter your User Id", :class => "form-control" %><br />
+        <span class="lead">Password</span>
+        <%= password_field :password, params[:password], :placeholder => "Enter the Password", :class => "form-control" %><br />
+        <center><%= submit_tag "login" %></center>
+      <% end %>
+    </div>
+  </div>
+</div>
